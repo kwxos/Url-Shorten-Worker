@@ -13,26 +13,26 @@
 <body>
   <div class="d-flex align-items-start flex-wrap">
   <div class="card shadow m-3">
-    <h5 class="card-header">A URL Shortener created using free Cloudflare worker and KV</h5>
+    <h5 class="card-header">使用免费Cloudflare worker和KV创建的URL Shortlink</h5>
     <div class="card-body">
       <h5 class="card-title"> </h5>
 
       <div class="input-group mb-3">
 
-          <span class="input-group-text" id="basic-addon1">Long URL</span>
+          <span class="input-group-text" id="basic-addon1">长 URL</span>
 
         <input type="text" class="form-control" id="longURL" aria-describedby="basic-addon1" placeholder="Example: https://example.com/" oninput="loadUrlList()">
       </div>
 
       <div class="input-group mb-3">
 
-          <span class="input-group-text" id="basic-addon2">Custom Short URL</span>
+          <span class="input-group-text" id="basic-addon2">自定义 Short URL</span>
 
         <input type="text" class="form-control" id="keyPhrase" aria-describedby="basic-addon2" placeholder="As you wish">
       </div>
 
       <div class="input-group mb-3">
-        <button class="btn btn-primary" type="button" onclick='shorturl()' id="addBtn">Shorten it</button>
+        <button class="btn btn-primary" type="button" onclick='shorturl()' id="addBtn">确认缩短</button>
       </div>
 
       <div class="input-group mb-3">
@@ -50,13 +50,13 @@
   </div>
 
   <div class="card shadow m-3">
-    <h5 class="card-header">LocalStorage List</h5>
+    <h5 class="card-header">本地Storage List</h5>
     <div class="card-body">
       <h5 class="card-title"> </h5>
       <div class="input-group mb-3">
-        <button class="btn btn-success" type="button" onclick='loadUrlList()' id="loadListBtn">load localStorage</button>
-        <button class="btn btn-danger" type="button" onclick='clearLocalStorage()' id="clearlocalStgBtn">clear localStorage</button>
-        <button class="btn btn-info" type="button" onclick='loadKV()' id="loadKV2localStgBtn">load KV to localStorage</button>
+        <button class="btn btn-success" type="button" onclick='loadUrlList()' id="loadListBtn">加载本地Storage</button>
+        <button class="btn btn-danger" type="button" onclick='clearLocalStorage()' id="clearlocalStgBtn">清理本地Storage</button>
+        <button class="btn btn-info" type="button" onclick='loadKV()' id="loadKV2localStgBtn">加载KV到本地Storage</button>
       </div>
 
       <div class="card-text">
