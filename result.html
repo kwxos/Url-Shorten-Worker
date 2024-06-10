@@ -2,19 +2,36 @@
 <html>
 
 <head>
-	<title>Url-Shorten-Worker</title>
-	<meta http-equiv="Refresh" content="1; url={__FINAL_LINK__}" />
+    <title>Url-Shorten-Worker</title>
+    <meta http-equiv="Refresh" content="1; url={__FINAL_LINK__}" />
     <meta name="referrer" content="no-referrer" />
 </head>
 
 <body>
-	<p>Redirecting..<br /><a href="{__FINAL_LINK__}">{__FINAL_LINK__}</a></p>
-	<script type="text/javascript">
-		/* <![CDATA[ */
-		setTimeout('window.location.replace( "{__FINAL_LINK__}" + window.location.hash );', 1000 )
-
-/* ]]> */
-	</script>
+    <p>Redirecting..<br /><a href="{__FINAL_LINK__}">{__FINAL_LINK__}</a></p>
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        setTimeout(function() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', "{__FINAL_LINK__}", true);
+            xhr.setRequestHeader('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36');
+            xhr.setRequestHeader('Referer', 'https://www.bilibili.com/video/');
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == XMLHttpRequest.DONE) {
+                    // 请求完成，处理响应
+                    if (xhr.status == 200) {
+                        // 请求成功
+                        console.log(xhr.responseText);
+                    } else {
+                        // 请求失败
+                        console.error('Error:', xhr.status);
+                    }
+                }
+            };
+            xhr.send();
+        }, 1000);
+        /* ]]> */
+    </script>
 </body>
 
 </html>
